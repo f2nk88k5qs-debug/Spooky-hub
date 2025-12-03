@@ -1,0 +1,219 @@
+local genv = getgenv()
+local _ = require == require
+local larry6 = cloneref(game:GetService("TweenService"))
+local larry9 = cloneref(game:GetService("RunService"))
+local larry12 = cloneref(game:GetService("HttpService"))
+local larry15 = cloneref(game:GetService("UserInputService"))
+cloneref(game:GetService("CoreGui"))
+local _ = cloneref(game:GetService("Players")).LocalPlayer
+local larry24 = Color3.fromRGB(16, 24, 39)
+local larry26 = Color3.fromRGB(12, 18, 32)
+local larry28 = Color3.fromRGB(21, 30, 47)
+local larry30 = Color3.fromRGB(10, 82, 120)
+local larry32 = Color3.fromRGB(56, 189, 248)
+local larry34 = Color3.fromRGB(56, 189, 248)
+local larry36 = Color3.fromRGB(30, 41, 59)
+local larry38 = Color3.fromRGB(25, 32, 48)
+local larry40 = Color3.fromRGB(52, 180, 230)
+local larry42 = Color3.fromRGB(241, 245, 249)
+local larry44 = Color3.fromRGB(148, 163, 184)
+local larry46 = Color3.fromRGB(239, 68, 68)
+local larry48 = Enum.Font.GothamBold
+local larry50 = Enum.Font.GothamMedium
+local larry52 = Enum.Font.Gotham
+local _ = genv.IO_SAVE
+genv.IO_SAVE = function(...)
+
+end
+return {
+    LoadConfig = function(...)
+        local _55_vararg1, _55_vararg2 = ...
+        local _ = "Spookyhub" .. "/settings/" .. _55_vararg2 .. ".json"
+        return false, "No file"
+    end,
+    Options = {},
+    Window = function(...)
+        local _59_vararg1, _59_vararg2 = ...
+        local larry61 = Instance.new("ScreenGui")
+        larry61.Name = "SpookyHubui"
+        larry61.ScreenInsets = Enum.ScreenInsets.None
+        larry61.ResetOnSpawn = false
+        larry61.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        larry61.DisplayOrder = 10000
+        local _ = larry9.IsStudio
+        larry61.Parent = gethui()
+        local larry69 = Instance.new("Frame")
+        larry69.Name = "Notifications"
+        larry69.BackgroundTransparency = 1
+        larry69.Size = UDim2.new(0, 300, 1, - 20)
+        larry69.Position = UDim2.new(1, - 320, 0, 10)
+        larry69.AnchorPoint = Vector2.new(0, 0)
+        larry69.Parent = larry61
+        larry69.ZIndex = 100
+        local larry77 = Instance.new("UIListLayout")
+        larry77.Padding = UDim.new(0, 10)
+        larry77.HorizontalAlignment = Enum.HorizontalAlignment.Center
+        larry77.SortOrder = Enum.SortOrder.LayoutOrder
+        larry77.VerticalAlignment = Enum.VerticalAlignment.Bottom
+        larry77.Parent = larry69
+        local larry86 = _59_vararg2.Size
+        local _ = larry86.X.Scale
+        local _ = larry86.Y.Scale
+        local larry100 = UDim2.new(larry86.X.Scale, larry86.X.Offset, larry86.Y.Scale, larry86.Y.Offset)
+        local larry102 = Instance.new("Frame")
+        larry102.Name = "MainBase"
+        larry102.AnchorPoint = Vector2.new(0.5, 0.5)
+        larry102.Position = UDim2.fromScale(0.5, 0.5)
+        larry102.Size = larry100
+        larry102.Parent = larry61
+        larry102.ClipsDescendants = false
+        larry102.BackgroundColor3 = larry24
+        larry102.BorderSizePixel = 0
+        local larry108 = Instance.new("UICorner", larry102)
+        larry108.CornerRadius = UDim.new(0, 20)
+        local larry112 = Instance.new("UIGradient", larry102)
+        larry112.Rotation = 35
+        local larry120 = ColorSequence.new({
+            [1] = ColorSequenceKeypoint.new(0, larry26),
+            [2] = ColorSequenceKeypoint.new(0.55, larry28),
+            [3] = ColorSequenceKeypoint.new(1, larry30),
+        })
+        larry112.Color = larry120
+        local larry122 = Instance.new("UIStroke", larry102)
+        larry122.Thickness = 3
+        larry122.Transparency = 0.8
+        larry122.Color = larry32
+        larry122.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+        local larry126 = Instance.new("UIStroke", larry102)
+        larry126.Thickness = 1
+        larry126.Transparency = 0.5
+        larry126.Color = larry34
+        larry126.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+        larry102.InputBegan:Connect(function(...)
+            local _132_vararg1 = ...
+            local _ = _132_vararg1.UserInputType == Enum.UserInputType.MouseButton1
+            local _ = _132_vararg1.UserInputType == Enum.UserInputType.Touch
+        end)
+        larry102.InputChanged:Connect(function(...)
+            local _144_vararg1 = ...
+            local _ = _144_vararg1.UserInputType == Enum.UserInputType.MouseMovement
+            local _ = _144_vararg1.UserInputType == Enum.UserInputType.Touch
+        end)
+        larry15.InputChanged:Connect(function(...)
+        end)
+        larry102.Size = UDim2.new(0, 0, 0, 0)
+        larry102.Visible = true
+        local larry166 = larry6:Create(larry102, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+            Size = larry100,
+        })
+        larry166:Play()
+        local larry170 = Instance.new("Frame")
+        larry170.Name = "TopBar"
+        larry170.Parent = larry102
+        larry170.BackgroundColor3 = larry38
+        larry170.BackgroundTransparency = 0.3
+        larry170.BorderSizePixel = 0
+        larry170.Size = UDim2.new(1, - 14, 0, 32)
+        larry170.Position = UDim2.new(0, 7, 0, 7)
+        local larry176 = Instance.new("UICorner", larry170)
+        larry176.CornerRadius = UDim.new(0, 12)
+        local larry180 = Instance.new("TextLabel")
+        larry180.Parent = larry170
+        larry180.BackgroundTransparency = 1
+        larry180.Position = UDim2.new(0, 16, 0, 0)
+        larry180.Size = UDim2.new(1, - 80, 1, 0)
+        larry180.Font = larry48
+        larry180.Text = _59_vararg2.Title
+        larry180.TextXAlignment = Enum.TextXAlignment.Left
+        larry180.TextSize = 18
+        larry180.TextColor3 = larry42
+        local larry189 = Instance.new("UIGradient", larry180)
+        local larry203 = ColorSequence.new({
+            [1] = ColorSequenceKeypoint.new(0, Color3.fromRGB(34, 211, 238)),
+            [2] = ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 255, 255)),
+            [3] = ColorSequenceKeypoint.new(1, Color3.fromRGB(99, 102, 241)),
+        })
+        larry189.Color = larry203
+        local larry205 = Instance.new("TextButton", larry170)
+        larry205.Size = UDim2.fromOffset(24, 24)
+        larry205.Position = UDim2.new(1, - 30, 0.5, - 12)
+        larry205.BackgroundColor3 = larry36
+        larry205.Text = "X"
+        larry205.Font = larry48
+        larry205.TextSize = 14
+        larry205.TextColor3 = larry46
+        larry205.AutoButtonColor = true
+        local larry211 = Instance.new("UICorner", larry205)
+        larry211.CornerRadius = UDim.new(0, 8)
+        local larry215 = Instance.new("UIStroke", larry205)
+        larry215.Color = larry34
+        larry215.Transparency = 0.7
+        larry215.Thickness = 1
+        larry205.MouseButton1Click:Connect(function(...)
+            local larry229 = larry6:Create(larry102, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+                Size = UDim2.new(0, 0, 0, 0),
+            })
+            larry229:Play()
+            task.delay(0.26, function(...)
+                larry102.Visible = false
+            end)
+        end)
+        larry15.InputBegan:Connect(function(...)
+        end)
+        local larry240 = Instance.new("Frame", larry102)
+        larry240.BackgroundTransparency = 1
+        larry240.Position = UDim2.new(0, 10, 0, 45)
+        larry240.Size = UDim2.new(1, - 20, 1, - 50)
+        local larry246 = Instance.new("ScrollingFrame", larry240)
+        larry246.Size = UDim2.new(0, 105, 1, 0)
+        larry246.BackgroundTransparency = 1
+        larry246.ScrollBarThickness = 2
+        larry246.BorderSizePixel = 0
+        larry246.CanvasSize = UDim2.new(0, 0, 0, 0)
+        larry246.AutomaticCanvasSize = Enum.AutomaticSize.Y
+        local larry254 = Instance.new("UIListLayout", larry246)
+        larry254.Padding = UDim.new(0, 6)
+        larry254.SortOrder = Enum.SortOrder.LayoutOrder
+        local larry260 = Instance.new("Frame", larry240)
+        larry260.Size = UDim2.new(0, 1, 1, 0)
+        larry260.Position = UDim2.new(0, 115, 0, 0)
+        larry260.BackgroundColor3 = larry34
+        larry260.BackgroundTransparency = 0.8
+        larry260.BorderSizePixel = 0
+        local larry266 = Instance.new("Frame", larry240)
+        larry266.Size = UDim2.new(1, - 125, 1, 0)
+        larry266.Position = UDim2.new(0, 125, 0, 0)
+        larry266.BackgroundTransparency = 1
+        larry266.ClipsDescendants = true
+        return {
+            Show = function(...)
+                larry102.Visible = true
+                local larry279 = larry6:Create(larry102, TweenInfo.new(0.25, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+                    Size = larry100,
+                })
+                larry279:Play()
+            end,
+            TabGroup = function(...)
+                return {
+                    Tab = function(...)
+                        local _283_vararg1, _283_vararg2 = ...
+                        local larry285 = Instance.new("TextButton", larry246)
+                        larry285.Size = UDim2.new(1, - 4, 0, 32)
+                        larry285.BackgroundColor3 = larry36
+                        larry285.BackgroundTransparency = 1
+                        larry285.Text = ""
+                        larry285.AutoButtonColor = false
+                        local larry289 = Instance.new("UICorner", larry285)
+                        larry289.CornerRadius = UDim.new(0, 10)
+                        local larry293 = Instance.new("UIStroke", larry285)
+                        larry293.Transparency = 1
+                        larry293.Color = larry40
+                        larry293.Thickness = 1
+                        local larry295 = Instance.new("Frame", larry285)
+                        larry295.Size = UDim2.new(0, 3, 1, - 6)
+                        larry295.Position = UDim2.new(0, 1, 0, 3)
+                        larry295.BackgroundColor3 = larry40
+                        larry295.BorderSizePixel = 0
+                        larry295.BackgroundTransparency = 1
+                        local larry301 = Instance.new("UIGradient", larry285)
+   
